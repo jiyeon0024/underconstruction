@@ -27,53 +27,55 @@ const UnderConstruction = () => {
   return (
     <div className="items-center overflow-hidden absolute text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  z-50   rounded-lg bg-white/20  w-fit  drop-shadow-lg text-center ">
       <div className=" px-6 ">
-        <Listbox
-          onChange={handleLangChange}
-          className="flex justify-end pt-3 w-full"
-        >
-          <div className="relative mt-1 text-center ">
-            <Listbox.Button className=" cursor-pointer relative   rounded-md border uppercase  border-white px-5 py-1  text-center shadow-md focus:outline-none focus-visible:border-cyan-500 sm:text-sm">
-              {selected === "" ? <Globe size={20} /> : selected}
+        <div className="flex justify-end w-full">
+          <Listbox
+            onChange={handleLangChange}
+            className="flex justify-center pt-3 "
+          >
+            <div className="relative mt-1 text-center ">
+              <Listbox.Button className=" cursor-pointer relative   rounded-md border uppercase  border-white px-5 py-1  text-center shadow-md focus:outline-none focus-visible:border-cyan-500 sm:text-sm">
+                {selected === "" ? <Globe size={20} /> : selected}
 
-              <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"></span>
-            </Listbox.Button>
-            <Transition
-              as={Fragment}
-              leave="transition ease-in duration-100"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <Listbox.Options className=" uppercase absolute  top-full px-5 py-1 mt-1 max-h-60  overflow-auto rounded-md bg-white text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
-                {languages.map((lang, index) => (
-                  <Listbox.Option
-                    key={index}
-                    className={({ active }) =>
-                      ` relative cursor-pointer select-none text-center ${
-                        active ? " text-cyan-500" : "text-gray-500"
-                      }`
-                    }
-                    value={lang}
-                  >
-                    {({ selected }) => (
-                      <>
-                        <span
-                          className={`block truncate ${
-                            selected ? "font-medium" : "font-normal"
-                          }`}
-                        >
-                          {lang}
-                        </span>
-                        {selected ? (
-                          <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-cyan-500"></span>
-                        ) : null}
-                      </>
-                    )}
-                  </Listbox.Option>
-                ))}
-              </Listbox.Options>
-            </Transition>
-          </div>
-        </Listbox>
+                <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"></span>
+              </Listbox.Button>
+              <Transition
+                as={Fragment}
+                leave="transition ease-in duration-100"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <Listbox.Options className="      uppercase absolute   top-full px-5 py-1 mt-1 max-h-60  overflow-auto rounded-md bg-white text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+                  {languages.map((lang, index) => (
+                    <Listbox.Option
+                      key={index}
+                      className={({ active }) =>
+                        ` relative cursor-pointer select-none text-center ${
+                          active ? " text-cyan-500" : "text-gray-500"
+                        }`
+                      }
+                      value={lang}
+                    >
+                      {({ selected }) => (
+                        <>
+                          <span
+                            className={`block truncate ${
+                              selected ? "font-medium" : "font-normal"
+                            }`}
+                          >
+                            {lang}
+                          </span>
+                          {selected ? (
+                            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-cyan-500"></span>
+                          ) : null}
+                        </>
+                      )}
+                    </Listbox.Option>
+                  ))}
+                </Listbox.Options>
+              </Transition>
+            </div>
+          </Listbox>
+        </div>
 
         <img
           src={"./logoWhite.svg"}
