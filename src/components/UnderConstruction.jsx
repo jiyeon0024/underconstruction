@@ -25,7 +25,7 @@ const UnderConstruction = () => {
   };
 
   return (
-    <div className="items-center overflow-hidden absolute text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  z-50   rounded-lg bg-white/20  w-fit  drop-shadow-lg text-center ">
+    <div className="  items-center overflow-hidden absolute text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  z-50   rounded-lg bg-white/20  w-fit  drop-shadow-lg text-center ">
       <div className=" px-6 ">
         <div className="flex justify-end w-full">
           <Listbox
@@ -82,7 +82,7 @@ const UnderConstruction = () => {
           className="w-[150px] m-auto  pb-10  pt-6"
         />
 
-        <h2 className="text-white font-bold lg:text-4xl  text-2xl  tracking-wider ">
+        <h2 className="text-white font-bold lg:text-4xl  text-2xl  tracking-wider  ">
           {t("title")}
         </h2>
         <p className="pt-6 text-white font-bold lg:text-2xl text-lg tracking-wider">

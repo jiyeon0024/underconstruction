@@ -6,7 +6,7 @@ import "./i18n";
 function App() {
   return (
     <Suspense fallback="loading">
-      <div className="canvas">
+      <div className="canvas  font-Nunito  ">
         <Zenitho />
         <UnderConstruction />
 
